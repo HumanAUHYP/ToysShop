@@ -8,7 +8,7 @@ namespace ToysShopCore
 {
     class Product
     {
-        string Name { get; set; }
+        public string Name { get; private set; }
         string Description { get; set; }
         string Distributor { get; set; }
         string Price { get; set; }

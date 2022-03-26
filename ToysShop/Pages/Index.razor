@@ -1,7 +1,15 @@
 ﻿@page "/"
+@using ToysShop.Data
 
-<h1>Hello, world!</h1>
+<h1>Adding products page</h1>
 
-Welcome to your new app.
+<div>
+    <button type="button" class="btn btn-primary" @onclick="() => AddProduct.Open()">Add product</button>
+</div>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<AddProduct @ref="AddProduct"></AddProduct>
+
+@code
+{
+    public AddProduct AddProduct { get; set; }
+}
