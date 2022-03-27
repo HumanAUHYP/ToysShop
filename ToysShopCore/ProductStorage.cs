@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ToysShopCore
 {
-    class ProductStorage
+    public class ProductStorage
     {
         List<Product> Products { get; set; }
 

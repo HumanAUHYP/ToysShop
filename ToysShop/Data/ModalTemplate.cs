@@ -120,13 +120,15 @@ namespace ToysShop.Data
             }
         }
 
-        protected int InputString(RenderTreeBuilder builder, string attribute, string type, int seq)
+        protected int InputString(RenderTreeBuilder builder, string attribute, string type, string value, int seq)
         {
             builder.OpenElement(++seq, "div");
             builder.AddAttribute(++seq, "style", "display: flex; justify-content: space-between; margin-bottom: 10px");
             builder.AddContent(++seq, attribute);
             builder.OpenElement(++seq, "input");
             builder.AddAttribute(++seq, "type", type);
+            builder.AddAttribute(++seq, "value", $"@{value}");
+            builder.AddAttribute(++seq, "@oninput", $"@(ui => {{ {value} = (string) ui.Value);}})");
             builder.AddAttribute(++seq, "style", "margin-right: 30px");
             builder.CloseElement();
             builder.CloseElement();

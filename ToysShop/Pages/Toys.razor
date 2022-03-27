@@ -1,6 +1,31 @@
 ﻿@page "/toys"
-<h3>Toys</h3>
+@using ToysShopCore
+<h3>Toys add</h3>
+
+<div style="display: flex; justify-content: space-between; margin-bottom: 10px">
+    Название<input style="margin-right: 80%" @bind="name"/>
+</div>
+<div style="display: flex; justify-content: space-between; margin-bottom: 10px">
+    Описание<input style="margin-right: 80%" @bind="description" />
+</div>
+<div style="display: flex; justify-content: space-between; margin-bottom: 10px">
+    Производитель<input style="margin-right: 80%" @bind="distributor" />
+</div>
+<div style="display: flex; justify-content: space-between; margin-bottom: 10px">
+    Стоимость<input type="number" style="margin-right: 80%" @bind="price" />
+</div>
+<div style="display: flex; justify-content: space-between; margin-bottom: 10px">
+    Актуальность<input type="checkbox" style="margin-right: 92%" @bind="actually" />
+</div>
+<div style="display: flex; justify-content: space-between; margin-bottom: 10px">
+    Количество<input type="number" style="margin-right: 80%" @bind="count" />
+</div>
 
 @code {
-
+    string name = "";
+    string description = "";
+    string distributor = "";
+    string price = "";
+    string actually = "";
+    string count = "";
 }

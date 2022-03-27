@@ -6,14 +6,27 @@ using System.Threading.Tasks;
 
 namespace ToysShopCore
 {
-    class Product
+    public class Product
     {
-        public string Name { get; private set; }
-        string Description { get; set; }
-        string Distributor { get; set; }
-        string Price { get; set; }
-        bool Actually { get; set; }
-        int Count { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Distributor { get; set; }
+        public int Price { get; set; }
+        public bool Actually { get; set; }
+        public int Count { get; set; }
+
+        public Product() { }
+
+        public Product(string[] prodParamsArray)
+        {
+            int i = 0;
+            Name = prodParamsArray[i++];
+            Description = prodParamsArray[i++];
+            Distributor = prodParamsArray[i++];
+            Price = int.Parse(prodParamsArray[i++]);
+            Actually = bool.Parse(prodParamsArray[i++]);
+            Count = int.Parse(prodParamsArray[i++]);
+        }
 
         public Product(string str)
         {
@@ -21,7 +34,7 @@ namespace ToysShopCore
             Name = data[0];
             Description = data[1];
             Distributor = data[2];
-            Price = data[3];
+            Price = int.Parse(data[3]);
             Actually = bool.Parse(data[4]);
             Count = int.Parse(data[5]);
         }
